@@ -1,4 +1,5 @@
 /* Give the first and last names of all the authors who live in California (Ca). */
+SELECT 'Give the first and last names of all the authors who live in California (Ca).' as '';
 SELECT au_fname, au_lname FROM authors WHERE state='CA'; 
 
 /* List the store id, order number and title id from salesdetail where the quantity sold is between 2000 and
