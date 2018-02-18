@@ -62,4 +62,13 @@ SELECT 'What book (actual title and author) is most ordered (qty) by bookstores 
 output with an "as" clause. Use a join' AS 'Question';
 
 
-SELECT titles.title, CONCAT(authors.au_fname, ' ', authors.au_lname) AS au_name FROM authors JOIN titles JOIN (SELECT found_titles.title_id, MAX(found_titles.qty) AS most_ordered FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_titles WHERE found_titles.qty = (SELECT MAX(qty) AS qty FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_title)) AS most_ordered JOIN titleauthor WHERE most_ordered.title_id = titleauthor.title_id AND titleauthor.au_id = authors.au_id AND titles.title_id = most_ordered.title_id; 
+SELECT titles.title, CONCAT(authors.au_fname, ' ', authors.au_lname) AS au_name FROM authors 
+JOIN titles 
+JOIN (SELECT found_titles.title_id, MAX(found_titles.qty) AS most_ordered FROM 
+      (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_titles 
+      WHERE found_titles.qty = 
+        (SELECT MAX(qty) AS qty FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_title)) AS most_ordered 
+JOIN titleauthor 
+WHERE most_ordered.title_id = titleauthor.title_id AND 
+      titleauthor.au_id = authors.au_id AND 
+      titles.title_id = most_ordered.title_id; 
