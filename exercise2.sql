@@ -59,14 +59,6 @@ SELECT stores.stor_name, stores_bought.ord_num FROM stores JOIN (SELECT stor_id,
 output with an "as" clause. Use a join. */
 
 SELECT 'What book (actual title and author) is most ordered (qty) by bookstores in salesdetail? Identify the
-output with an "as" clause. Use a join' AS 'Question 9';
+output with an "as" clause. Use a join' AS 'Question';
 
-SELECT found_title.title, CONCAT(authors.au_fname, ' ', authors.au_lname) AS auth_name FROM authors 
-    JOIN (SELECT title, title_id FROM titles WHERE total_sales=(    
-            SELECT MAX(total_sales) FROM titles
-            )) AS found_title 
-    JOIN titleauthor 
-    ON titleauthor.title_id = found_title.title_id AND titleauthor.au_id = authors.au_id;
-    
-
-
+SELECT titles.title, CONCAT(authors.au_fname, ' ', authors.au_lname) AS au_name FROM authors JOIN titles WHERE authors.au_id=(SELECT au_id FROM titleauthor WHERE title_id=(SELECT title_id FROM salesdetail WHERE qty=(SELECT MAX(qty) as qty FROM salesdetail))) AND titles.title_id=(SELECT title_id FROM salesdetail WHERE qty=(SELECT MAX(qty) as qty FROM salesdetail));

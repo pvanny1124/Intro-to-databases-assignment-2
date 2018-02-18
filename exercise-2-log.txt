@@ -1,10 +1,9 @@
-Script started on 2018-02-17 21:43:07-0500
-vane2605@css2c70:~/intro-to-databases/assignment-2$ rm -r .git[3P.git[2Pls -a[K -a[K -arm .git-r .git[Krm -r .git[3P.git[2Pls -a[Kgit init[K[1Plscd intro-to-databases/ls[Kcd ..[3Plscd ..[3Plscd ..[3Plscd ..[3Plsmaria10alias maria10="mysql -u'S18336Ppvanega' -p'15172605' -h'134.74.146.21'"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd Intro-to-databases-assignment-1/ls[Kalias maria10="mysql -u'S18336Ppvanega' -p'15172605' -h'134.74.146.21'"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmaria10[K
+Script started on 2018-02-18 13:25:46-0500
+vane2605@css2c70:~/intro-to-databases/assignment-2$ maria10git push -u origin mastermaria10[K
 maria10: command not found
-vane2605@css2c70:~/intro-to-databases/assignment-2$ alias maria1-[K0="mysql -u'S18336Ppvanega' -p'15172605' -h'134.74.146.21'"
-vane2605@css2c70:~/intro-to-databases/assignment-2$ maria10
+vane2605@css2c70:~/intro-to-databases/assignment-2$ alias [K[K[K[K[K[Kmysql -u'S18336Ppvanega' -p'15172605' -h'134.74.146.21'
 (B[0;1mWelcome to the MariaDB monitor.  Commands end with ; or \g.
-(B[m(B[0;1mYour MariaDB connection id is 263837
+(B[m(B[0;1mYour MariaDB connection id is 263860
 Server version: 10.2.7-MariaDB MariaDB Server
 
 (B[m(B[0;1mCopyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
@@ -51,7 +50,7 @@ You can turn off this feature to get a quicker startup with -A
 | List the store id, order number and title id from salesdetail where the quantity sold is between 2000 and
 3000 |
 +----------------------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.01 sec)
+(B[0;1m1 row in set (0.00 sec)
 (B[m(B[0;1m
 (B[m+---------+--------------------+----------+
 | stor_id | ord_num            | title_id |
@@ -102,7 +101,7 @@ You can turn off this feature to get a quicker startup with -A
 | 1985-12-13 00:00:00 |
 | 1986-01-02 00:00:00 |
 +---------------------+
-(B[0;1m5 rows in set (0.00 sec)
+(B[0;1m5 rows in set (0.01 sec)
 (B[m(B[0;1m
 (B[m+------------------------------------------------------------------------------------------------------------------+
 | Question 5                                                                                                       |
@@ -125,7 +124,7 @@ clause |
 | Give the total number of each title id stocked by bookstores from most to least omitting negative
 quantities. |
 +---------------------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.01 sec)
+(B[0;1m1 row in set (0.00 sec)
 (B[m(B[0;1m
 (B[m+----------+------+
 | title_id | qty  |
@@ -412,7 +411,7 @@ quantities. |
 | What psychology book (actual title) is the most expensive of its type? Use max in subquery. Identify the
 output with an "as" clause |
 +-------------------------------------------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.00 sec)
+(B[0;1m1 row in set (0.01 sec)
 (B[m(B[0;1m
 (B[m+-----------------------------------------------------------------+
 | most_expensive_psyc_title                                       |
@@ -453,23 +452,23 @@ Years". Use a join |
 (B[0;1m17 rows in set (0.00 sec)
 (B[m(B[0;1m
 (B[m+---------------------------------------------------------------------------------------------------------------------------------------------+
-| Question 9                                                                                                                                  |
+| Question                                                                                                                                    |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | What book (actual title and author) is most ordered (qty) by bookstores in salesdetail? Identify the
 output with an "as" clause. Use a join |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 (B[0;1m1 row in set (0.00 sec)
 (B[m(B[0;1m
-(B[m+-----------------------------+---------------+
-| title                       | auth_name     |
-+-----------------------------+---------------+
-| The Very Hungry Caterpillar | Dirk Stringer |
-+-----------------------------+---------------+
-(B[0;1m1 row in set (0.01 sec)
+(B[m+---------------------------+---------------+
+| title                     | au_name       |
++---------------------------+---------------+
+| Where the Wild Things Are | Meander Smith |
++---------------------------+---------------+
+(B[0;1m1 row in set (0.00 sec)
 (B[m(B[0;1m
 (B[mMariaDB [S18336Ppvanega]> Ctrl-C -- exit!
 (B[0;1mAborted
 (B[mvane2605@css2c70:~/intro-to-databases/assignment-2$ exit
 exit
 
-Script done on 2018-02-17 21:44:53-0500
+Script done on 2018-02-18 13:26:45-0500
