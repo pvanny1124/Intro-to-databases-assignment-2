@@ -32,7 +32,7 @@ SELECT title AS most_expensive_psyc_title FROM titles WHERE type='psychology' AN
 /* List the store's name and the order number in salesdetail for all stores that bought title including 'Fifty
 Years'. Use a join */
 
-SELECT stores.stor_name, storesb.ord_num FROM stores JOIN (SELECT stor_id, ord_num FROM salesdetail WHERE title_id=(SELECT title_id FROM titles WHERE title LIKE "%Fifty Years%")) AS stores_bought ON stores.stor_id = stores_bought.stor_id;
+SELECT stores.stor_name, stores_bought.ord_num FROM stores JOIN (SELECT stor_id, ord_num FROM salesdetail WHERE title_id=(SELECT title_id FROM titles WHERE title LIKE "%Fifty Years%")) AS stores_bought ON stores.stor_id = stores_bought.stor_id;
 
 /* What book (actual title and author) is most ordered (qty) by bookstores in salesdetail? Identify the
 output with an "as" clause. Use a join. */
