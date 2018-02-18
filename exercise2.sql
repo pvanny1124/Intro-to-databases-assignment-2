@@ -29,7 +29,7 @@ clause */
 SELECT 'What book (title_id) is most ordered (qty) by bookstores in salesdetail? Identify the output with an "as"
 clause' AS 'Question 5';
 
-SELECT title_id, max(qty) AS most_ordered FROM salesdetail;
+SELECT found_titles.title_id, MAX(found_titles.qty) AS most_ordered FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_titles WHERE found_titles.qty = (SELECT MAX(qty) as qty FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_title); 
 
 /* Give the total number of each title id stocked by bookstores from most to least omitting negative
 quantities. */
@@ -37,7 +37,7 @@ quantities. */
 SELECT 'Give the total number of each title id stocked by bookstores from most to least omitting negative
 quantities.' AS 'Question 6';
 
-SELECT title_id, qty FROM salesdetail WHERE qty >= 0 ORDER BY qty DESC;
+SELECT title_id, SUM(qty) as total FROM salesdetail GROUP BY title_id ORDER BY total DESC;
 
 /* What psychology book (actual title) is the most expensive of its type? Use max in subquery. Identify the
 output with an "as" clause */
@@ -61,4 +61,5 @@ output with an "as" clause. Use a join. */
 SELECT 'What book (actual title and author) is most ordered (qty) by bookstores in salesdetail? Identify the
 output with an "as" clause. Use a join' AS 'Question';
 
-SELECT titles.title, CONCAT(authors.au_fname, ' ', authors.au_lname) AS au_name FROM authors JOIN titles WHERE authors.au_id=(SELECT au_id FROM titleauthor WHERE title_id=(SELECT title_id FROM salesdetail WHERE qty=(SELECT MAX(qty) as qty FROM salesdetail))) AND titles.title_id=(SELECT title_id FROM salesdetail WHERE qty=(SELECT MAX(qty) as qty FROM salesdetail));
+
+SELECT titles.title, CONCAT(authors.au_fname, ' ', authors.au_lname) AS au_name FROM authors JOIN titles JOIN (SELECT found_titles.title_id, MAX(found_titles.qty) AS most_ordered FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_titles WHERE found_titles.qty = (SELECT MAX(qty) AS qty FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_title)) AS most_ordered JOIN titleauthor WHERE most_ordered.title_id = titleauthor.title_id AND titleauthor.au_id = authors.au_id AND titles.title_id = most_ordered.title_id; 
