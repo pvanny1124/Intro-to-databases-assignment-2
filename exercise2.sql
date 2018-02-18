@@ -8,7 +8,7 @@ SELECT stor_id, ord_num, title_id FROM salesdetail WHERE qty>2000 AND qty<3000;
 
 /* How many different stores appear in the salesdetail table? Identify the output with an "as" clause. */
 
-SELECT COUNT(DISTINCT stor_id) FROM salesdetail;
+SELECT COUNT(DISTINCT stor_id) AS num_of_stores FROM salesdetail;
 
 /* What are the 5 oldest sales records in sales? Use order by desc, limit. */
 
