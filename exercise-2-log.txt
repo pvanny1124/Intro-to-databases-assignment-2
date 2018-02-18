@@ -1,30 +1,27 @@
 Script started on 2018-02-17 21:43:07-0500
-vane2605@css2c70:~/intro-to-databases/assignment-2$ rm -r .git[3P.git[2Pls -a[K -a[K -arm .git-r .git[Krm -r .git[3P.git[2Pls -a[Kgit init[K[1Plscd intro-to-databases/ls[Kcd ..[3Plscd ..[3Plscd ..[3Plscd ..[3Plsmaria10alias maria10="mysql -u'S18336Ppvanega' -p'15172605' -h'134.74.146.21'"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd Intro-to-databases-assignment-1/ls[Kalias maria10="mysql -u'S18336Ppvanega' -p'15172605' -h'134.74.146.21'"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmaria10[K
-maria10: command not found
-vane2605@css2c70:~/intro-to-databases/assignment-2$ alias maria1-[K0="mysql -u'S18336Ppvanega' -p'15172605' -h'134.74.146.21'"
+vane2605@css2c70:~/intro-to-databases/assignment-2$ alias maria10="mysql -u'S18336Ppvanega' -p'15172605' -h'134.74.146.21'"
 vane2605@css2c70:~/intro-to-databases/assignment-2$ maria10
-(B[0;1mWelcome to the MariaDB monitor.  Commands end with ; or \g.
-(B[m(B[0;1mYour MariaDB connection id is 263837
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 263837
 Server version: 10.2.7-MariaDB MariaDB Server
 
-(B[m(B[0;1mCopyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
 
-(B[m(B[0;1mType 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-(B[mMariaDB [(none)]> use S18336Ppvanega;
+MariaDB [(none)]> use S18336Ppvanega;
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
 
-(B[0;1mDatabase changed
-(B[mMariaDB [S18336Ppvanega]> use S18336Ppvanega;source exercise2.sql;
+Database changed
+MariaDB [S18336Ppvanega]> use S18336Ppvanega; source exercise2.sql;
 +-------------------------------------------------------------------------------+
 | Question 1                                                                    |
 +-------------------------------------------------------------------------------+
 | Give the first and last names of all the authors who live in California (Ca). |
 +-------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+----------+------------+
+row in set (0.00 sec)
++----------+------------+
 | au_fname | au_lname   |
 +----------+------------+
 | Johnson  | White      |
@@ -43,17 +40,16 @@ You can turn off this feature to get a quicker startup with -A
 | Sheryl   | Hunter     |
 | Heather  | McBadden   |
 +----------+------------+
-(B[0;1m15 rows in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+----------------------------------------------------------------------------------------------------------------+
+15 rows in set (0.00 sec)
+
++----------------------------------------------------------------------------------------------------------------+
 | Question 2                                                                                                     |
 +----------------------------------------------------------------------------------------------------------------+
 | List the store id, order number and title id from salesdetail where the quantity sold is between 2000 and
 3000 |
 +----------------------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.01 sec)
-(B[m(B[0;1m
-(B[m+---------+--------------------+----------+
+row in set (0.01 sec)
++---------+--------------------+----------+
 | stor_id | ord_num            | title_id |
 +---------+--------------------+----------+
 | 5023    | AB-123-DEF-425-1Z3 | TC4203   |
@@ -70,30 +66,28 @@ You can turn off this feature to get a quicker startup with -A
 | 7131    | CKYKO-5            | KC2000   |
 | 7896    | GINGERALE          | AW1234   |
 +---------+--------------------+----------+
-(B[0;1m13 rows in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+-----------------------------------------------------------------------------------------------------+
+13 rows in set (0.00 sec)
+
++-----------------------------------------------------------------------------------------------------+
 | Question 3                                                                                          |
 +-----------------------------------------------------------------------------------------------------+
 | How many different stores appear in the salesdetail table? Identify the output with an "as" clause. |
 +-----------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+---------------+
+1 row in set (0.00 sec)
++---------------+
 | num_of_stores |
 +---------------+
 |            14 |
 +---------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+-------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++-------------------------------------------------------------------------+
 | Question 4                                                              |
 +-------------------------------------------------------------------------+
 | What are the 5 oldest sales records in sales? Use order by desc, limit. |
 +-------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+---------------------+
+row in set (0.00 sec)
++---------------------+
 | date                |
 +---------------------+
 | 1985-10-12 00:00:00 |
@@ -102,32 +96,30 @@ You can turn off this feature to get a quicker startup with -A
 | 1985-12-13 00:00:00 |
 | 1986-01-02 00:00:00 |
 +---------------------+
-(B[0;1m5 rows in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+------------------------------------------------------------------------------------------------------------------+
+5 rows in set (0.00 sec)
+
++------------------------------------------------------------------------------------------------------------------+
 | Question 5                                                                                                       |
 +------------------------------------------------------------------------------------------------------------------+
 | What book (title_id) is most ordered (qty) by bookstores in salesdetail? Identify the output with an "as"
 clause |
 +------------------------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+----------+--------------+
+1 row in set (0.00 sec)
++----------+--------------+
 | title_id | most_ordered |
 +----------+--------------+
 | AK1231   |         9487 |
 +----------+--------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+---------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++---------------------------------------------------------------------------------------------------------------+
 | Question 6                                                                                                    |
 +---------------------------------------------------------------------------------------------------------------+
 | Give the total number of each title id stocked by bookstores from most to least omitting negative
 quantities. |
 +---------------------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.01 sec)
-(B[m(B[0;1m
-(B[m+----------+------+
+1 row in set (0.01 sec)
++----------+------+
 | title_id | qty  |
 +----------+------+
 | AW1234   | 9487 |
@@ -404,32 +396,30 @@ quantities. |
 | AK1231   |    4 |
 | AK1231   |    2 |
 +----------+------+
-(B[0;1m273 rows in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+-------------------------------------------------------------------------------------------------------------------------------------+
+273 rows in set (0.00 sec)
+
++-------------------------------------------------------------------------------------------------------------------------------------+
 | Question 7                                                                                                                          |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | What psychology book (actual title) is the most expensive of its type? Use max in subquery. Identify the
 output with an "as" clause |
 +-------------------------------------------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+-----------------------------------------------------------------+
+1 row in set (0.00 sec)
++-----------------------------------------------------------------+
 | most_expensive_psyc_title                                       |
 +-----------------------------------------------------------------+
 | Computer Phobic and Non-Phobic Individuals: Behavior Variations |
 +-----------------------------------------------------------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+--------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
++--------------------------------------------------------------------------------------------------------------------------------+
 | Question 8                                                                                                                     |
 +--------------------------------------------------------------------------------------------------------------------------------+
 | List the store's name and the order number in salesdetail for all stores that bought title including "Fifty
 Years". Use a join |
 +--------------------------------------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+--------------------------------------+--------------------+
+1 row in set (0.00 sec)
++--------------------------------------+--------------------+
 | stor_name                            | ord_num            |
 +--------------------------------------+--------------------+
 | Thoreau Reading Discount Chain       | AB-123-DEF-425-1Z3 |
@@ -450,26 +440,25 @@ Years". Use a join |
 | Bookbeat                             | 13-J-9             |
 | Contemporary                         | 2345262            |
 +--------------------------------------+--------------------+
-(B[0;1m17 rows in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+---------------------------------------------------------------------------------------------------------------------------------------------+
+17 rows in set (0.00 sec)
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
 | Question 9                                                                                                                                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | What book (actual title and author) is most ordered (qty) by bookstores in salesdetail? Identify the
 output with an "as" clause. Use a join |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
-(B[0;1m1 row in set (0.00 sec)
-(B[m(B[0;1m
-(B[m+-----------------------------+---------------+
+1 row in set (0.00 sec)
++-----------------------------+---------------+
 | title                       | auth_name     |
 +-----------------------------+---------------+
 | The Very Hungry Caterpillar | Dirk Stringer |
 +-----------------------------+---------------+
-(B[0;1m1 row in set (0.01 sec)
-(B[m(B[0;1m
-(B[mMariaDB [S18336Ppvanega]> Ctrl-C -- exit!
-(B[0;1mAborted
-(B[mvane2605@css2c70:~/intro-to-databases/assignment-2$ exit
+1 row in set (0.01 sec)
+
+MariaDB [S18336Ppvanega]> Ctrl-C -- exit!
+Aborted
+vane2605@css2c70:~/intro-to-databases/assignment-2$ exit
 exit
 
 Script done on 2018-02-17 21:44:53-0500
