@@ -9,7 +9,7 @@ SELECT au_fname, au_lname FROM authors WHERE state='CA';
 SELECT 'List the store id, order number and title id from salesdetail where the quantity sold is between 2000 and
 3000' as 'Question 2';
 
-SELECT stor_id, ord_num, title_id FROM salesdetail WHERE qty>2000 AND qty<3000;
+SELECT stor_id, ord_num, title_id FROM salesdetail WHERE qty BETWEEN 2000 and 3000;
 
 /* How many different stores appear in the salesdetail table? Identify the output with an "as" clause. */
 
