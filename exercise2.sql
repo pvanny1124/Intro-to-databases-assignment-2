@@ -39,10 +39,9 @@ SELECT title_id FROM salesdetail GROUP BY title_id ORDER BY SUM(qty) DESC LIMIT 
 /* Give the total number of each title id stocked by bookstores from most to least omitting negative
 quantities. */
 
-SELECT 'Give the total number of each title id stocked by bookstores from most to least omitting negative
-quantities.' AS 'Question 6';
-
-SELECT title_id, SUM(qty) as total FROM salesdetail GROUP BY title_id ORDER BY total DESC;
+SELECT 'Give the total number of each title id stocked by bookstores from most to least omitting negative quantities.' AS 'Question 6';
+SELECT 'SELECT title_id, SUM(qty) as total FROM store_inventories WHERE qty >= 0 GROUP BY title_id ORDER BY total DESC;' AS 'Query';
+SELECT title_id, SUM(qty) as total FROM store_inventories WHERE qty >= 0 GROUP BY title_id ORDER BY total DESC;
 
 /* What psychology book (actual title) is the most expensive of its type? Use max in subquery. Identify the
 output with an "as" clause */
@@ -71,9 +70,31 @@ SELECT stores.stor_name, sa.ord_num FROM ((titles ti INNER JOIN salesdetail sa O
 output with an "as" clause. Use a join. */
 
 SELECT 'What book (actual title and author) is most ordered (qty) by bookstores in salesdetail? Identify the
-output with an "as" clause. Use a join' AS 'Question';
+output with an "as" clause. Use a join' AS 'Question 9';
 
+SELECT "SELECT titles.title, CONCAT(authors.au_fname, ' ', authors.au_lname) AS au_name
+	FROM (SELECT title_id FROM salesdetail GROUP BY title_id ORDER BY SUM(qty) DESC LIMIT 1) AS most_ordered_title
+	JOIN titles
+	JOIN titleauthor
+	JOIN authors
+	ON titleauthor.title_id = most_ordered_title.title_id
+		AND titles.title_id = most_ordered_title.title_id
+		AND titleauthor.au_id = authors.au_id;
+		" AS 'Query';
 
+SELECT titles.title, CONCAT(authors.au_fname, ' ', authors.au_lname) AS au_name
+	FROM (SELECT title_id FROM salesdetail GROUP BY title_id ORDER BY SUM(qty) DESC LIMIT 1) AS most_ordered_title
+	JOIN titles
+	JOIN titleauthor
+	JOIN authors
+	ON titleauthor.title_id = most_ordered_title.title_id
+		AND titles.title_id = most_ordered_title.title_id
+		AND titleauthor.au_id = authors.au_id;
+
+/* Much cleanerrr code :D :D */
+
+/* I LEFT THE REDUNDANT CODE THAT WAS REFACTORED... just as a reference to see how bad I was at queries :) */
+/*
 SELECT titles.title, CONCAT(authors.au_fname, ' ', authors.au_lname) AS au_name FROM authors 
 JOIN titles 
 JOIN (SELECT found_titles.title_id, MAX(found_titles.qty) AS most_ordered FROM 
@@ -84,3 +105,4 @@ JOIN titleauthor
 WHERE most_ordered.title_id = titleauthor.title_id AND 
       titleauthor.au_id = authors.au_id AND 
       titles.title_id = most_ordered.title_id; 
+*/
