@@ -49,6 +49,7 @@ output with an "as" clause */
 
 SELECT 'What psychology book (actual title) is the most expensive of its type? Use max in subquery. Identify the
 output with an "as" clause' AS 'Question 7';
+SELECT 'SELECT title AS most_expensive_psyc_title FROM titles WHERE type=\'psychology\' AND price=(SELECT MAX(price) FROM titles WHERE type=\'psychology\');' AS 'Query';
 
 SELECT title AS most_expensive_psyc_title FROM titles WHERE type='psychology' AND price=(SELECT MAX(price) FROM titles WHERE type='psychology');
 
