@@ -1,6 +1,7 @@
 /* Give the first and last names of all the authors who live in California (Ca). */
 
 SELECT 'Give the first and last names of all the authors who live in California (Ca).' as 'Question 1';
+SELECT 'SELECT au_fname, au_lname FROM authors WHERE state=\'CA\';' AS 'Query';
 SELECT au_fname, au_lname FROM authors WHERE state='CA'; 
 
 /* List the store id, order number and title id from salesdetail where the quantity sold is between 2000 and
@@ -8,19 +9,19 @@ SELECT au_fname, au_lname FROM authors WHERE state='CA';
 
 SELECT 'List the store id, order number and title id from salesdetail where the quantity sold is between 2000 and
 3000' as 'Question 2';
-
+SELECT 'SELECT stor_id, ord_num, title_id FROM salesdetail WHERE qty BETWEEN 2000 and 3000;' AS 'Query';
 SELECT stor_id, ord_num, title_id FROM salesdetail WHERE qty BETWEEN 2000 and 3000;
 
 /* How many different stores appear in the salesdetail table? Identify the output with an "as" clause. */
 
 SELECT 'How many different stores appear in the salesdetail table? Identify the output with an "as" clause.' AS 'Question 3';
-
+SELECT 'SELECT COUNT(DISTINCT stor_id) AS num_of_stores FROM salesdetail;' AS 'Query';
 SELECT COUNT(DISTINCT stor_id) AS num_of_stores FROM salesdetail;
 
 /* What are the 5 oldest sales records in sales? Use order by desc, limit. */
 
 SELECT 'What are the 5 oldest sales records in sales? Use order by desc, limit.' AS 'Question 4';
-
+SELECT 'SELECT date FROM sales ORDER BY date LIMIT 5;' AS 'Query';
 SELECT date FROM sales ORDER BY date LIMIT 5;
 
 /* What book (title_id) is most ordered (qty) by bookstores in salesdetail? Identify the output with an "as"
