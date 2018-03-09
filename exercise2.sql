@@ -55,12 +55,12 @@ SELECT title AS most_expensive_psyc_title FROM titles WHERE type='psychology' AN
 /* List the store's name and the order number in salesdetail for all stores that bought title including 'Fifty
 Years'. Use a join */
 
-SELECT 'List the store\'s name and the order number in salesdetail for all stores that bought title including "Fifty
-Years". Use a join' AS 'Question 8';
-SELECT 'SELECT stores.stor_name salesdetail.ord_num FROM ((titles ti INNER JOIN salesdetail sa ON ti.title LIKE '%Fifty Years%' AND ti.title_id = sa.title_id)) INNER JOIN stores on sa.stor_id = stores.stor_id;' AS 'Query';
-SELECT stores.stor_name salesdetail.ord_num FROM 
-((titles ti INNER JOIN salesdetail sa ON ti.title LIKE '%Fifty Years%' AND ti.title_id = sa.title_id)) 
-      INNER JOIN stores ON sa.stor_id = stores.stor_id; 
+SELECT "List the store's name and the order number in salesdetail for all stores that bought title including Fifty
+Years. Use a join" AS 'Question 8';
+SELECT 'SELECT stores.stor_name sa.ord_num FROM ((titles ti INNER JOIN salesdetail sa ON ti.title LIKE \'%Fifty Years%\' AND ti.title_id =sa.title_id)) INNER JOIN stores on sa.stor_id = stores.stor_id;' AS 'Query';
+
+SELECT stores.stor_name, sa.ord_num FROM ((titles ti INNER JOIN salesdetail sa ON ti.title LIKE '%Fifty Years%' AND ti.title_id = sa.title_id)
+                   INNER JOIN stores ON sa.stor_id = stores.stor_id); 
 
 /* Redundant code: */
 /* SELECT stores.stor_name, stores_bought.ord_num FROM stores JOIN (SELECT stor_id, ord_num FROM salesdetail WHERE title_id=(SELECT title_id FROM titles WHERE title LIKE "%Fifty Years%")) AS stores_bought ON stores.stor_id = stores_bought.stor_id;
