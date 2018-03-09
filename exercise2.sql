@@ -29,8 +29,12 @@ clause */
 
 SELECT 'What book (title_id) is most ordered (qty) by bookstores in salesdetail? Identify the output with an "as"
 clause' AS 'Question 5';
+SELECT 'SELECT title_id FROM salesdetail GROUP BY title_id ORDER BY SUM(qty) DESC LIMIT 1;' AS 'Query';
+SELECT title_id FROM salesdetail GROUP BY title_id ORDER BY SUM(qty) DESC LIMIT 1;
+/* redundant code used previously: */
+/*SELECT found_titles.title_id, MAX(found_titles.qty) AS most_ordered FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_titles WHERE found_titles.qty = (SELECT MAX(qty) as qty FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_title); 
+*/
 
-SELECT found_titles.title_id, MAX(found_titles.qty) AS most_ordered FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_titles WHERE found_titles.qty = (SELECT MAX(qty) as qty FROM (SELECT title_id, SUM(qty) AS qty FROM salesdetail GROUP BY title_id) AS found_title); 
 
 /* Give the total number of each title id stocked by bookstores from most to least omitting negative
 quantities. */
