@@ -19,7 +19,7 @@ SELECT au_fname, au_lname FROM authors WHERE state='CA';
 3000. */
 
 SELECT 'List the store id, order number and title id from salesdetail where the quantity sold is between 2000 and
-3000' as 'Question 2';
+3000' as 'Problem 2';
 
 SELECT 'SELECT stor_id, ord_num, title_id FROM salesdetail WHERE qty BETWEEN 2000 and 3000;' AS 'Query';
 
